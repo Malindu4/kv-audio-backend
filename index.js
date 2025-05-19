@@ -7,6 +7,7 @@ import productRouter from './routes/productRouter.js';
 import jwt from "jsonwebtoken"
 
 import dotenv from "dotenv";
+import reviewRouter from './routes/reviewRouter.js';
 dotenv.config();
 
 
@@ -38,10 +39,12 @@ app.use((req, res, next) => {
     
 })
 
+
 let mongoUrl=process.env.MONGODB_URI
 
 mongoose.connect(mongoUrl);
 let connection=mongoose.connection;
+
 
 connection.once("open",()=>{
     console.log("Database connected");
@@ -49,8 +52,11 @@ connection.once("open",()=>{
 
 app.use("/api/users",userRouter)
 app.use("/api/products",productRouter)
-
+app.use("/api/reviews",reviewRouter)
 
 app.listen(3000,()=>{
     console.log("server is running on port 3000");
 })
+
+//kamal.silva@example.com
+//1234
