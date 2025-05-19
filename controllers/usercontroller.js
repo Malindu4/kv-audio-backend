@@ -2,6 +2,8 @@
 import user from "../models/user.js"
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
+import dotenv from "dotenv"
+dotenv.config()
 export function registerUser(req, res) {
     const data = req.body
     data.password = bcrypt.hashSync(data.password, 10)   
@@ -37,7 +39,7 @@ user.findOne({
             email:user.email,
             rale:user.rale
             
-         },"malindu89!")
+         },process.env.jwi_secret)
          res.json({message:"Login successfull",token:token})
 
       }

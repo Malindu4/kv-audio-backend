@@ -22,7 +22,7 @@ app.use((req, res, next) => {
         token=token .replace("Bearer ","");
         console.log(token)
 
-        jwt.verify(token,"malindu89!",
+        jwt.verify(token,process.env.jwi_secret,
             (err,decoded)=>{
             if(!err){
                 req.user=decoded;
