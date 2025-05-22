@@ -6,15 +6,15 @@ export function addProduct(req, res) {
 
   console.log(req.user)
 
-if(res ,user==null){
-      res.status(404).json(
+if(req .user==null){
+      res.status(401).json(
        {message:"please login and try again"}
       )
-       return
+       return 
  }
-   if(res.user.rale!="admin"){
-       res.status(404).json(
-         {message:"you are not admin"}
+   if(req.user.rale !="admin"){
+       res.status(403).json(
+         {message:"you are not authorized to  perform this action"}
        )
         return
    }

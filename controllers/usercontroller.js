@@ -38,7 +38,7 @@ user.findOne({
             lastName:user.lastName,
             email:user.email,
             rale:user.rale,
-            profillepicture:user.profillepicture
+         profilePicture:user.profilePicture
             
          },process.env.jwi_secret)
          res.json({message:"Login successfull",token:token})

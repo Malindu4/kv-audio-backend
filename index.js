@@ -58,5 +58,8 @@ app.listen(3000,()=>{
     console.log("server is running on port 3000");
 })
 
-//kamal.silva@example.com
-//1234
+  //"email": "sara.smith@example.com",
+  //"password": "20"24,
+ // "role": "Admin",
+//"email": "admin@example2.com",
+  //"password": "adminpass1",
