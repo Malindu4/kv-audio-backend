@@ -34,11 +34,12 @@ user.findOne({
       if(ispasswordCorrect){
 
          const token=jwt.sign({
-            firsName:user.firstName,
-            lastName:user.lastName,
-            email:user.email,
-            rale:user.rale,
-         profilePicture:user.profilePicture
+            firstName : user.firstName,
+                    lastName : user.lastName,
+                    role : user.role,
+                    email : user.email,
+                    profilePic : user.profilePic,
+                    phone : user.phone
             
          },process.env.jwi_secret)
          res.json({message:"Login successfull",token:token})

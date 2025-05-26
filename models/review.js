@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const reviewSchema = new mongoose.Schema({
-  emaill:{
+  email:{
     type: String,
     required: true, 
     unique: true,
@@ -23,16 +23,17 @@ const reviewSchema = new mongoose.Schema({
     required: true,
     default: Date.now,
   },
-  isApproved: {
-    type: Boolean,
-    required: true,
-    default: false,
-  },
-    profilePicture:{
+   profilePicture:{
         type: String,
         required: true,
         default:"https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740.jpg"
     },
+  isApproved: {
+    type: Boolean,
+    required: true,
+    default: false,
+  }
+   
 });
 
 const Review = mongoose.model("Review", reviewSchema);

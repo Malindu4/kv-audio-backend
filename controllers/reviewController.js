@@ -17,7 +17,7 @@ export function addRview(req,res){
     
     newReview.save().then(()=>{
         res.json({message:"Review added successfully"})
-    }).catch((error)=>{
+    }).catch(()=>{
         res.status(500).json({error:"Review addition failed"})
     })
 
@@ -25,7 +25,8 @@ export function addRview(req,res){
 
 export function getReviews(req,res){
     const user =req.user;
-    if(user==null || user.rale!="admin"){
+   
+    if (user == null || user.role != "admin"){
       Review.find({isApproved:true}).then((reviews)=>{
            res.json(reviews)
        })
@@ -38,3 +39,4 @@ export function getReviews(req,res){
     })
    }
 }
+
